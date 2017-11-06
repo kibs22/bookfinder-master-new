@@ -31,8 +31,7 @@ body,html{
                 </div>
                  
                  <b-form>
-
-                 
+                     
                  <bs-input v-model="data.firstname" :error="errors.firstname" type="text" id="firstname" label="Firstname" input-class="input-sm"></bs-input>
                       
                  <bs-input v-model="data.MI" :error="errors.MI" type="text" id="MI" label="Middle Initial" input-class="input-sm"></bs-input>
@@ -49,7 +48,7 @@ body,html{
 
                  <bs-input v-model="data.password_confirmation" :error="errors.password" type="password" id="password_confirmation" label="Confirm Password" input-class="input-sm"></bs-input>
 
-                     <b-button variant="success" :block=true @click.prevent="register()">Sign up</b-button>
+                     <b-button variant="success" :block=true @click.prevent="register()">REGISTER</b-button>
                  </b-form>  
                   
             </b-card>

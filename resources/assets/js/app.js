@@ -14,7 +14,7 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 import VueRouter from 'vue-router';
 import VeeValidate from 'vee-validate';
-import VueEventBus from 'vue-event-bus';
+//import VueEventBus from 'vue-event-bus';
 import BootstrapVue from 'bootstrap-vue';
 import VueAuth from '@websanova/vue-auth';
 
@@ -26,7 +26,7 @@ Vue.use(BootstrapVue);
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.use(VeeValidate);
-Vue.use(VueEventBus)
+// Vue.use(VueEventBus)
 
 
 /**
@@ -48,6 +48,7 @@ var requirepath = './components/';
  Vue.component('login', require('./login/login-form.vue'))
  Vue.component('register', require('./register/register-form.vue'))
  Vue.component('sell', require('./home/sell-form.vue'))
+ Vue.component('quickitemview', require('./home/item-view.vue'))
  
 
 
@@ -70,6 +71,11 @@ const routes =[
         path: '/sell',
         component: require('./home/sell.vue'),
         name: 'sell'
+    },
+    {
+        path: '/viewItem',
+        component: require('./home/view-item.vue'),
+        name: 'viewItem'
     }
      
 ]

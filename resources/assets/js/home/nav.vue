@@ -5,7 +5,7 @@
 				<div class="top-header-left">
 					<ul class="support">
 						
-						<li ><a href="#">Home</a></li>
+						<li ><a href="/">Home</a></li>
 					</ul>
 					<ul class="support">
 						
@@ -34,7 +34,7 @@
 			<div class="container">
 				<div class="header-bottom-left">
 					<div class="logo">
-						<a href="#"><img src="images/bookshelflogo.png" alt=" " /></a>
+						<a href="/"><img src="images/bookshelflogo.png" alt=" " /></a>
 					</div>
 					<div class="search">
 						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
