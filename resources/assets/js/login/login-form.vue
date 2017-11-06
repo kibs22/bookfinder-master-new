@@ -1,6 +1,6 @@
 <template>
     <div> 
-		<div class=" login-right">
+		<div class="">
 			<h3>REGISTERED USERS</h3>
 				<p>If you have an account with us, please log in.</p>
 				<div class="row">
@@ -13,7 +13,7 @@
 					</div>
 				</div>
 			   </div>	
-			    <div class=" login-left">
+			    <div class="">
 			  	 <h3>NEW USERS</h3>
 				 <p>By creating an account with our site, you will be able to post a book into you account profile and find a potential buyer for your posted book.</p>
 				  <router-link to="register" class="btn btn-danger"> Create an Account</router-link>
