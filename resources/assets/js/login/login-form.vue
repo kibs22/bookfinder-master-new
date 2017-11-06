@@ -45,10 +45,10 @@ export default {
             this.$auth.login({
                 data: this.data, // data: {} in Axios
                 success: (res) => {
-
+                    this.$emit('user-posted', 'jack shit');
                     switch(res.data.user.role_type){
-                        case 'ADMIN' : this.$router.replace({'name' : 'admin-dashboard'}); break;
-                        case 'NORMAL': this.$router.replace({'name' : 'user-dashboard'}); break;
+                        //case 'ADMIN' : this.$router.replace({'name' : 'admin-dashboard'}); break;
+                        case 'NORMAL': this.$router.replace({'name' : 'index'});  break;
                         default: break;
 
                     }

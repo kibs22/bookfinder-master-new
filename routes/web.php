@@ -37,3 +37,8 @@ Route::get('/retrieveMessages','MessageController@tempRetrieveMessages');
 
 //category
 Route::get('/getCategory', 'getCategoryController');
+
+Route::group(['prefix'=> 'api'],function(){
+
+	Route::post('/trial','TrialController@trial');
+});

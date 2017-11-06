@@ -55,7 +55,8 @@ var requirepath = './components/';
 const routes =[
     {
         path: '/',
-        component: require('./home/index.vue')
+        component: require('./home/index.vue'),
+        name:'asd'
     },
     {
         path:'/login',

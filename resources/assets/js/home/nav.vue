@@ -18,13 +18,13 @@
 					<div class="clearfix"> </div>
 				</div>
 				<div class="top-header-right">
-					<div class="down-top" v-if="$auth.user()">		
+					<div class="down-top">		
 						  <select class="in-drop">
-							  <option value="*" class="in-of">Welcome,</option>
+							  <option value="*" class="in-of"  v-if="$auth.user().firstname"  >Welcome, {{ $auth.user().firstname }}</option>
 							  <option value="*" class="in-of">Profile</option>
 							  <option value="*" class="in-of">Account Settings</option>
-							  <option value="*" class="in-of">Logout</option>
 							</select>
+							<button class="btn btn-success" data-toggle="modal" data-target=".bd-logout-modal-sm" v-if="$auth.user().firstname">Logout </button>		
 					 </div>	
 				</div>
 				<div class="clearfix"> </div>		
@@ -43,17 +43,31 @@
 					<div class="clearfix"> </div>
 				</div>
 				<div class="header-bottom-right">					
-						<div class="account"> <router-link to="login"><span><i class="fa fa-user fa-lg"></i> </span>YOUR ACCOUNT</router-link></div>
-							<ul class="login">
+						<div class="account" v-if="$auth.user().firstname"> <router-link to="login"><span><i class="fa fa-user fa-lg" ></i> </span>YOUR ACCOUNT</router-link></div>
+							<ul class="login"   v-if="!$auth.user().firstname">
 								<li><router-link to="login"><span><i class="fa fa-lock fa-lg"></i> </span>LOGIN</router-link></li> |
 								<li><router-link to="register">SIGNUP</router-link></li>
 							</ul>
-						<div class="cart"> <router-link to="sell"><span><i class="fa fa-usd fa-lg"></i> </span>SELL</router-link></div>
+						<div class="cart" v-if="$auth.user().firstname"> <router-link to="sell"><span><i class="fa fa-usd fa-lg"></i> </span>SELL</router-link></div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="clearfix"> </div>	
 			</div>
 		</div>
+
+		 <div class="modal fade bd-logout-modal-sm" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+				<div class="modal-body">
+					Logout?
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">AY</button>
+					<button type="button" class="btn btn-primary" @click="$auth.logout()" data-dismiss="modal" >Cge</button>
+				</div>
+				</div>
+			</div>
+		 </div>
 	</div>
 </template>
 
@@ -63,7 +77,14 @@
 
 		},
 		mounted(){
-			console.log(this.$auth.user())
+			// if(this.$auth.user()){
+			// 	location.reload()
+			// }
+		},
+		methods: {
+			userPosted () {
+				alert('hello')
+			}
 		}
 	}
 </script>

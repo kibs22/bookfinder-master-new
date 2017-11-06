@@ -9,6 +9,6 @@ class GetAllBooksController extends Controller
 {
     public function __invoke()
     {
-        return response()->json(['posts' => PostedBook::with(['postedCategory','getCategory','postedBy'])->get()]);
+    	return response()->json(['posts' => PostedBook::with(['postedCategory','getCategory','postedBy'])->get()]);
     }
 }
