@@ -48,11 +48,7 @@
 								<li><router-link to="login"><span><i class="fa fa-lock fa-lg"></i> </span>LOGIN</router-link></li> |
 								<li><router-link to="register">SIGNUP</router-link></li>
 							</ul>
-<<<<<<< HEAD
 						<div class="cart" v-if="$auth.user().firstname"> <router-link to="sell"><span><i class="fa fa-usd fa-lg"></i> </span>SELL</router-link></div>
-=======
-						<div class="cart"> <router-link to="post"><span><i class="fa fa-usd fa-lg"></i> </span>POST</router-link></div>
->>>>>>> 26bace95a70308b0e5625e1a063187149a88e1ca
 					<div class="clearfix"> </div>
 				</div>
 				<div class="clearfix"> </div>	

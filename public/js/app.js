@@ -51266,10 +51266,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {},
@@ -51352,7 +51348,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "to": "register"
     }
-  }, [_vm._v("SIGNUP")])], 1)]) : _vm._e(), _vm._v("\n<<<<<<< HEAD\n\t\t\t\t\t\t"), (_vm.$auth.user().firstname) ? _c('div', {
+  }, [_vm._v("SIGNUP")])], 1)]) : _vm._e(), _vm._v(" "), (_vm.$auth.user().firstname) ? _c('div', {
     staticClass: "cart"
   }, [_c('router-link', {
     attrs: {
@@ -51360,15 +51356,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('span', [_c('i', {
     staticClass: "fa fa-usd fa-lg"
-  })]), _vm._v("SELL")])], 1) : _vm._e(), _vm._v("\n=======\n\t\t\t\t\t\t"), _c('div', {
-    staticClass: "cart"
-  }, [_c('router-link', {
-    attrs: {
-      "to": "post"
-    }
-  }, [_c('span', [_c('i', {
-    staticClass: "fa fa-usd fa-lg"
-  })]), _vm._v("POST")])], 1), _vm._v("\n>>>>>>> 26bace95a70308b0e5625e1a063187149a88e1ca\n\t\t\t\t\t"), _c('div', {
+  })]), _vm._v("SELL")])], 1) : _vm._e(), _vm._v(" "), _c('div', {
     staticClass: "clearfix"
   })]), _vm._v(" "), _c('div', {
     staticClass: "clearfix"
