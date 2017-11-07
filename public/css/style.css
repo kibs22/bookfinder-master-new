@@ -1722,3 +1722,7 @@ img.banner-bag {
 	padding: 0 0 0 6.2em;
 }
 }
+h3, .h3 {
+    font-size: 24px;
+    color: #E74C3C;
+}

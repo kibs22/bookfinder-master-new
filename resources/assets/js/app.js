@@ -47,7 +47,7 @@ var requirepath = './components/';
  Vue.component('footers', require('./home/footer.vue'))
  Vue.component('login', require('./login/login-form.vue'))
  Vue.component('register', require('./register/register-form.vue'))
- Vue.component('sell', require('./home/sell-form.vue'))
+ Vue.component('post-book', require('./post/post-form.vue'))
  Vue.component('quickitemview', require('./home/item-view.vue'))
  
 
@@ -56,7 +56,7 @@ const routes =[
     {
         path: '/',
         component: require('./home/index.vue'),
-        name:'asd'
+        name:'index'
     },
     {
         path:'/login',
@@ -69,14 +69,19 @@ const routes =[
         name: 'register'
     },
     {
-        path: '/sell',
-        component: require('./home/sell.vue'),
-        name: 'sell'
+        path: '/post',
+        component: require('./post/post.vue'),
+        name: 'post'
     },
     {
         path: '/viewItem',
         component: require('./home/view-item.vue'),
         name: 'viewItem'
+    },
+    {
+        path:'/profile',
+        component: require('./profile/profile-form.vue'),
+        name: 'profile'
     }
      
 ]

@@ -43,12 +43,12 @@
 					<div class="clearfix"> </div>
 				</div>
 				<div class="header-bottom-right">					
-						<div class="account" v-if="$auth.user().firstname"> <router-link to="login"><span><i class="fa fa-user fa-lg" ></i> </span>YOUR ACCOUNT</router-link></div>
+						<div class="account" v-if="$auth.user().firstname"> <router-link to="profile"><span><i class="fa fa-user fa-lg" ></i> </span>YOUR ACCOUNT</router-link></div>
 							<ul class="login"   v-if="!$auth.user().firstname">
 								<li><router-link to="login"><span><i class="fa fa-lock fa-lg"></i> </span>LOGIN</router-link></li> |
 								<li><router-link to="register">SIGNUP</router-link></li>
 							</ul>
-						<div class="cart" v-if="$auth.user().firstname"> <router-link to="sell"><span><i class="fa fa-usd fa-lg"></i> </span>SELL</router-link></div>
+						<div class="cart" v-if="$auth.user().firstname"> <router-link to="post"><span><i class="fa fa-usd fa-lg"></i> </span>POST</router-link></div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="clearfix"> </div>	
