@@ -49,6 +49,7 @@
 								<li><router-link to="register">SIGNUP</router-link></li>
 							</ul>
 						<div class="cart" v-if="$auth.user().firstname"> <router-link to="post"><span><i class="fa fa-usd fa-lg"></i> </span>POST</router-link></div>
+						<div class="cart" v-if="$auth.user().firstname"> <router-link to="message"><span><i class="fa fa-envelope fa-lg"></i> </span> MESSAGES</router-link></div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="clearfix"> </div>	

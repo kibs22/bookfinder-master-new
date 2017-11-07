@@ -82,6 +82,11 @@ const routes =[
         path:'/profile',
         component: require('./profile/profile-form.vue'),
         name: 'profile'
+    },
+    {
+        path: '/message',
+        component: require('./message/messages.vue'),
+        name: 'message'
     }
      
 ]
