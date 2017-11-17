@@ -18,7 +18,7 @@ class CreatePostedBooksTable extends Migration
             $table->unsignedInteger('seller_id');
             $table->boolean('availability');
             $table->decimal('price', 5, 2);
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('seller_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

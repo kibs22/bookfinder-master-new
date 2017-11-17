@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Review;
 use App\PostedBook;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Http\Traits\AuthenticatedUser;
 use Illuminate\Support\Facades\Storage;
+
 
 class PostedBooksController extends Controller
 {
@@ -22,7 +24,7 @@ class PostedBooksController extends Controller
     public function index()
     {   
         if($this->user()){
-            return response()->json(['posts' => PostedBook::with(['postedCategory','getCategory'])->get()]);
+            return response()->json(['posts' => PostedBook::whereSellerId($this->user()->id)->with(['postedCategory','getCategory'])->get()]);
         }
     }
 
@@ -45,7 +47,7 @@ class PostedBooksController extends Controller
     public function store(PostRequest $request)
     {
        $post = $request->all();
-       $post['user_id'] = $this->user()->id;
+       $post['seller_id'] = $this->user()->id;
        $post['availability'] = 0;
       
        $ret = PostedBook::create($post);
@@ -113,6 +115,12 @@ class PostedBooksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        PostedBook::whereId($id)->delete();
+        return response()->json(['success'=> true]);
+        // $posted = PostedBook::where('id','=',$id)->get();
+        // $posted->delete();
+        //PostedBook::whereId($id)->delete();
+        // $postedbook = posted_books::where('id', '=', $id)->first();
+        // $postedbook -> delete();
     }
 }

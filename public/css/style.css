@@ -1726,3 +1726,105 @@ h3, .h3 {
     font-size: 24px;
     color: #E74C3C;
 }
+
+.hr{
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.nav-pills>li>a {padding: 5px 10px;}
+
+.message-wrap
+{
+	box-shadow: 0 0 3px #ddd;
+	padding:0;
+
+}
+.msg
+{
+	padding:5px;
+	border-top:1px solid #ddd;
+	margin:0;
+}
+.msg.odd {
+	background-color: #FFFFFF;
+}
+.msg.even {
+	background-color: #F4F6F8;
+}
+.msg .author {
+	border-right: 1px solid #ddd;
+}
+.msg-wrap {
+	padding:10px;
+}
+
+
+.msg-wrap .thread-title {
+	font-size: 22px;
+	font-weight: 400;
+	color: #222222;
+	padding: 0 0 0 10px;
+}
+
+.send-wrap
+{
+	border-top: 1px solid #eee;
+	padding:10px;
+	/*background: #f8f8f8;*/
+}
+
+.highlight
+{
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+}
+
+.msg-wrap .media-heading
+{
+	color:#003bb3;
+	font-weight: 700;
+}
+
+.msg-date
+{
+	background: none;
+	text-align: center;
+	color:#aaa;
+	border:none;
+	box-shadow: none;
+	border-bottom: 1px solid #ddd;
+}
+
+.chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li.left .chat-body
+{
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body
+{
+    margin-right: 60px;
+}
+
+
+.chat li .chat-body p
+{
+    margin: 0;
+    color: #777777;
+}
+
+

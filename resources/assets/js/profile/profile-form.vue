@@ -15,10 +15,12 @@
         <div class="col-md-3">
          <user-info></user-info>
         </div>
-        <div class="col-md-6">
-         <myitems></myitems>
+        <div class="col-md-7"  style="height:100%;">
+          <div class="card-body" style="overflow-y:scroll; height:700px;">
+            <myitems></myitems>
+          </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
          <reviews></reviews>
         </div>
       </div>

@@ -29,7 +29,7 @@ class LoginController extends Controller
         // all good so return the token
         $user = \App\User::whereEmail($credentials['email'])->first();
 
-        return response()->json(compact('user'))->header('Authorization', "Bearer {$token}");
+        return response()->json(compact('user','token'))->header('Authorization', "Bearer {$token}");
     }
 
     public function getUsers(){

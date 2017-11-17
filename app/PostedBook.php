@@ -4,15 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class PostedBook extends Model
 {
     use notifiable;
+    use SoftDeletes;
 
     protected $fillable = [
-        'user_id', 'price', 'description','author','year','title','availability','image','IBSN',
+        'seller_id', 'price', 'description','author','year','title','availability','image','IBSN',
     ];
-
+    protected $dates = ['deleted_at'];
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -21,7 +23,7 @@ class PostedBook extends Model
     
     public function postedBy()
     {
-        return $this->belongsTo('App\User','user_id');
+        return $this->belongsTo('App\User','seller_id');
     }
     public function postedCategory()
     {
@@ -31,9 +33,9 @@ class PostedBook extends Model
     {
         return $this->belongsToMany('App\Category','posted_categories','posted_id','category_id');
     }
-    public function scopeSearch($query, $search, $id)
+    public function scopeSearch($query, $search)
     {
-        return $query->whereTitle($search)->orWhere('IBSN',$search)->where('user_id','!=',$id);
+        return $query->whereTitle($search)->orWhere('IBSN',$search);
     }
     public function scopeDetails($query, $id)
     {

@@ -23,7 +23,8 @@
                 <message-navlinks></message-navlinks>
             </div>
             <div class="col-md-9">
-                <message-thread></message-thread>
+                <div class="row"><div class="col-md-12" style="height: 15px;"></div></div>
+                <user-thread></user-thread>
             </div>
         </div>   
    </div>
@@ -41,7 +42,9 @@ export default{
 components : {
             'message-nav' : require('../message/message-nav.vue'),
             'message-thread' : require('../message/message-thread.vue'),
-            'message-navlinks' : require('../message/message-navlinks.vue')
+            'message-navlinks' : require('../message/message-navlinks.vue'),
+            'user-thread' : require('../message/user-thread.vue')
+
         },
 }
 </script>

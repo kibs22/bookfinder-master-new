@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->string('lastname', 100);
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('fullname')->storedAs('CONCAT(firstname, " ", MI, ". ", lastname)');
             $table->string('mobile');
             $table->string('address');
             $table->char('confirm_key',10)->nullable();

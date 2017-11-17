@@ -17,6 +17,7 @@ import VeeValidate from 'vee-validate';
 //import VueEventBus from 'vue-event-bus';
 import BootstrapVue from 'bootstrap-vue';
 import VueAuth from '@websanova/vue-auth';
+import VueSweetAlert from 'vue-sweetalert';
 
 
 axios.defaults.baseURL = 'http://localhost:8000';
@@ -26,6 +27,8 @@ Vue.use(BootstrapVue);
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.use(VeeValidate);
+Vue.use(VueSweetAlert);
+
 // Vue.use(VueEventBus)
 
 
@@ -74,7 +77,7 @@ const routes =[
         name: 'post'
     },
     {
-        path: '/viewItem',
+        path: '/view-post/:id',
         component: require('./home/view-item.vue'),
         name: 'viewItem'
     },
@@ -86,7 +89,29 @@ const routes =[
     {
         path: '/message',
         component: require('./message/messages.vue'),
-        name: 'message'
+        name: 'message',
+        // children: [
+        //     {
+        //         path: 'thread',
+        //         component: require('./message/message-convo.vue'),
+        //         name:'user-thread'
+        //     }
+        // ]
+    },
+    {
+        path: '/message/thread',
+        component: require('./message/message-user-thread.vue'),
+        name: 'message-user-thread'
+    },
+    {
+        path:'/admin',
+        component: require(requirepath+'admin/admin-dashboard.vue'),
+        name: 'admin',
+    },
+    {
+        path: '/admin/pr',
+        component: require(requirepath+'admin/admin-profile.vue'),
+        name:'adminprofile',
     }
      
 ]

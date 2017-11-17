@@ -16,7 +16,6 @@ class MessageController extends Controller
 
     public function send(SendMessageRequest $r)
     {
-      
         $message = $r->all();
         $message['sender_id'] = $this->user()->id; 
         
@@ -25,6 +24,19 @@ class MessageController extends Controller
         if($res->id){
             return response()->json(['message' => 'Message successfully sent!' ]);
         }
+    }
+    public function message()
+    {
+        if($this->user()){
+           return response()->json([
+               'data' => Message::GroupMessage($this->user()->id)->with(['sender'])->get()
+               ]);
+        }
+    }
+    public function mobileMessages(){
+        return response()->json([
+               'data' => Message::with(['sender'])->groupBy('sender_id')->get()
+               ]);
     }
     public function tempRetrieveMessages()
     {

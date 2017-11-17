@@ -11,16 +11,15 @@ class SearchBookController extends Controller
     use AuthenticatedUser;
     public function get_search(Request $r)
     {
-      $data = PostedBook::with(['postedBy','postedCategory','getCategory'])->search($r->search, $this->user()->id)->get();
-    
+      
+      $data = PostedBook::with(['postedBy','postedCategory','getCategory'])->search($r->search)->get();
       $new = $data->map(function($item, $key){
          return [
            'id' => $item->id,
-           'fullname' => $item->postedBy->fullname,
-           'item' => ['title' => $item->title, 'description' => $item->description, 'author' => $item->author,'ibsn' => $item->IBSN,'availability' => $item->availability,'image' => $item->image],
-           'position' => ['lat' => $item->postedBy->latitude, 'lng' => $item->postedBy->longitude]
+           'fullname' => $item->postedBy->firstname,
+           'item' => ['title' => $item->title, 'description' => $item->description, 'author' => $item->author,'ibsn' => $item->IBSN,'availability' => $item->availability,'image' => $item->image]
            ];
       });
-      return response()->json(['data' => $new ]);
+      return response()->json(['data' => $data ]);
     }
 }

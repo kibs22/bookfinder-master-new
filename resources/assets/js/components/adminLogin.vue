@@ -67,8 +67,7 @@ export default {
                 success: (res) => {
 
                     switch(res.data.user.role_type){
-                        case 'ADMIN' : this.$router.replace({'name' : 'admin-dashboard'}); break;
-                        case 'NORMAL': this.$router.replace({'name' : 'user-dashboard'}); break;
+                        case 'ADMIN' : this.$router.push({'name' : 'adminprofile'}); break;
                         default: break;
 
                     }

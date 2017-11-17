@@ -16,6 +16,7 @@ class CreatePostedCategoriesTable extends Migration
         Schema::create('posted_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('posted_id');
+            $table->unsignedInteger('category_id');
             $table->foreign('posted_id')->references('id')->on('posted_books')->onDelete('cascade');
             $table->timestamps();
         });

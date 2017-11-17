@@ -20,6 +20,8 @@
                     <bs-file v-model="data.image" :error="errors.image" id="year" label="Book Image" ></bs-file>
 
                     <button type="button" class="btn btn-danger " @click="submit">POST</button>
+
+                    <button type="button" class="btn btn-danger " @click="sample">SAMPLE</button>
                 </form>
             </div>
         </div>
@@ -60,6 +62,9 @@ export default{
                 this.errors = e.response.data
             })
             
+        },
+        sample(){
+            alert()
         }
         
     },

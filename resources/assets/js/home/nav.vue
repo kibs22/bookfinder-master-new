@@ -37,19 +37,19 @@
 						<a href="/"><img src="images/bookshelflogo.png" alt=" " /></a>
 					</div>
 					<div class="search">
-						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
-						<input type="submit"  value="SEARCH">
+						<input type="text" v-model="data.search" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+						<input type="submit"  value="SEARCH" @click="search()">
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="header-bottom-right">					
-						<div class="account" v-if="$auth.user().firstname"> <router-link to="profile"><span><i class="fa fa-user fa-lg" ></i> </span>YOUR ACCOUNT</router-link></div>
+						<div class="account" v-if="$auth.user().firstname"> <router-link :to="{path:'/profile'}"><span><i class="fa fa-user fa-lg" ></i> </span>YOUR ACCOUNT</router-link></div>
 							<ul class="login"   v-if="!$auth.user().firstname">
 								<li><router-link to="login"><span><i class="fa fa-lock fa-lg"></i> </span>LOGIN</router-link></li> |
 								<li><router-link to="register">SIGNUP</router-link></li>
 							</ul>
-						<div class="cart" v-if="$auth.user().firstname"> <router-link to="post"><span><i class="fa fa-usd fa-lg"></i> </span>POST</router-link></div>
-						<div class="cart" v-if="$auth.user().firstname"> <router-link to="message"><span><i class="fa fa-envelope fa-lg"></i> </span> MESSAGES</router-link></div>
+						<div class="cart" v-if="$auth.user().firstname"> <router-link :to="{name: 'post'}"><span><i class="fa fa-usd fa-lg"></i> </span>POST</router-link></div>
+						<div class="cart" v-if="$auth.user().firstname"> <router-link :to="{name: 'message'}"><span><i class="fa fa-envelope fa-lg"></i> </span> MESSAGES</router-link></div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="clearfix"> </div>	
@@ -77,15 +77,22 @@
 		props:{
 
 		},
+		data(){
+			return {
+				data:{
+					search:null
+				}
+			}
+		},
 		mounted(){
-			// if(this.$auth.user()){
-			// 	location.reload()
-			// }
+
 		},
 		methods: {
-			userPosted () {
-				alert('hello')
-			}
+			search(){
+				// console.log(this.data.search	)
+				this.$emit('user-posted')
+				this.$router.push({ name	: 'index', query: { q: this.data.search }})		
+			},
 		}
 	}
 </script>

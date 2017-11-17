@@ -8,7 +8,6 @@
 
 </style>
 <template>
-<div>
  <div>
     <div class="d-block m-x-auto" v-bind:disabled="loading">
         <i class="fa fa-spinner fa-spin" style="font-size: 50px;" v-show="loading"></i>

@@ -2,7 +2,7 @@
   <div>
   
     <!--header-->
-    <navbar></navbar>
+    <navbar v-on:user-posted="userSearched()"></navbar>
     <!--header-->
    
     
@@ -16,7 +16,7 @@
           <category></category> 
         </div>
         <div class="col-md-8">
-          <items></items>
+          <items :query="q" ref="userItems"></items>
         </div>
       </div>
     </div>
@@ -29,3 +29,28 @@
   </div>
 
 </template>
+
+<script>
+  export default {
+    methods: {
+      userSearched () {
+        this.$refs.userItems.updateList();
+      }
+    },
+    data() {
+      return {
+        q: null
+      }
+    },
+    created() {
+      this.q = this.$route.query.q;
+      
+    },
+    watch: {
+      '$route' (to, from) {
+        this.q = this.$route.query.q;
+        console.log('search from index component: %s', this.q)
+      }
+    }
+  }
+</script>

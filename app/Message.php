@@ -14,9 +14,14 @@ class Message extends Model
        'message','sender_id','recipient_id','posted_id',
     ];
 
-    public function senderMessage()
+    public function sender()
     {
         return $this->belongsTo('App\user','sender_id');
+    }
+    public function scopeGroupMessage($query,$logged_in){
+        return $query->groupBy('sender_id')
+        ->having('recipient_id', '=', $logged_in)
+        ->latest();
     }
     public function scopeThreadHeader($query,$logged_in)
     {
